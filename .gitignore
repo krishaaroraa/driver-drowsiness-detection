@@ -1,0 +1,35 @@
+# macOS junk
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Models / weights (often large)
+models/
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+
+# Training dataset (comment these two lines out if you REALLY want to push images)
+train_dataset/
+
+# Audio / video artifacts
+*.wav
+*.mp3
+*.mp4
+*.avi
+
+# IDE settings
+.vscode/
+.idea/
+
