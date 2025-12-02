@@ -1,45 +1,70 @@
-# Real-time Driver Drowsiness Detection using TensorFlow and OpenCV
+# 🚘 Driver Drowsiness Detection (Real-Time)
 
-A real-time driver drowsiness detection system designed to enhance road safety by continuously monitoring the driver’s facial movements. The system detects if the driver’s eyes remain closed for a prolonged duration and triggers an alarm to alert the driver, helping to prevent accidents caused by drowsiness.
-
----
-
-## Dataset
-
-The project uses the **Driver Drowsiness Detection** dataset from Kaggle. The dataset can be accessed [here](https://www.kaggle.com/datasets/ismailnasri20/driver-drowsiness-dataset-ddd?resource=download-directory).
-
-### Dataset Specifications:
-- **Total Images**: 10,000
-- **Categories**: Classified into 'Open' and 'Closed' eye states.
-- **Training Set**: 8,000 images
-- **Test Set**: 2,000 images
-- **Purpose**: To train the model to detect whether the driver’s eyes are open or closed.
+A real-time driver drowsiness detection system built using **TensorFlow** and **OpenCV**, designed to improve road safety by continuously monitoring the driver’s eye state.  
+If the system detects that the driver's eyes remain closed for too long, it triggers an audible alarm to prevent accidents caused by drowsiness.
 
 ---
 
-## OpenCV for Face Detection
+## ⭐ Features
 
-OpenCV is used to detect the driver’s face in real time using the Haar Cascade classifier. By accurately identifying the facial region, the system focuses on the eyes, ensuring the drowsiness detection is efficient and precise.
-
----
-
-## TensorFlow for Deep Learning Model
-
-TensorFlow powers the deep learning model for eye state classification. The Convolutional Neural Network (CNN) is trained on the dataset to distinguish between 'Open' and 'Closed' eyes with high accuracy. The trained model integrates seamlessly with OpenCV to process frames in real time.
+- 🔍 **Real-time face and eye detection** using OpenCV Haar Cascade
+- 🧠 **CNN-based eye state classifier** (Open vs Closed)
+- 🚨 **Alarm system** activated when eyes stay closed for 3–4 seconds
+- 🎥 Works with any webcam
+- ⚡ Runs at ~37 FPS on CPU
 
 ---
 
-## Results
+## 📁 Dataset
 
-- **Model Accuracy**: Achieved a classification accuracy of 92.31% on the test set.
-- **Detection Speed**: Processes video frames in real time (~37 FPS) on a standard CPU.
-- **System Performance**: Successfully triggers an alarm when eyes remain closed for a specific duration. (3-4s)
+This project uses the **Driver Drowsiness Detection Dataset** from Kaggle.
+
+**Dataset Specs:**
+- **Total Images:** 10,000  
+- **Categories:**  
+  - `Open`  
+  - `Closed`  
+- **Training Set:** 8,000 images  
+- **Test Set:** 2,000 images  
+- **Purpose:** Train a CNN to classify eye state with high accuracy
+
+> **Link:** https://www.kaggle.com/datasets (Search: “Driver Drowsiness Detection”)
 
 ---
 
-## How to Run
+## 🧠 Deep Learning Model (TensorFlow)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repository/driver-drowsiness-detection.git
-2. run drowsiness_detection.py
+A Convolutional Neural Network (CNN) is trained to classify eye images as:
+
+- **Open**
+- **Closed**
+
+The trained model integrates with OpenCV to evaluate eye state from each video frame in real time.
+
+---
+
+## 🎯 Results
+
+| Metric | Value |
+|--------|--------|
+| **Model Accuracy** | **92.31%** |
+| **Real-Time FPS** | **~37 FPS** |
+| **Alarm Trigger** | Closed-eye duration ≥ 3–4 seconds |
+
+---
+
+## 🎥 Real-Time Detection (OpenCV)
+
+- Uses OpenCV’s Haar Cascade to detect face region  
+- Focuses on eye ROI for classification  
+- Blends TensorFlow predictions with frame-by-frame analysis  
+- Activates alarm when drowsiness threshold is crossed
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/krishaaroraa/driver-drowsiness-detection.git
+cd driver-drowsiness-detection
